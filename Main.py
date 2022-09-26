@@ -1,7 +1,14 @@
+import uvicorn
 from fastapi import FastAPI
 app = FastAPI()
 
-@app.get("Main")
+@app.get("/")
 
-async def index():
+async def root():
     return {"message": "Hallo Welt"}
+
+
+
+     # at last, the bottom of the file/module
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=5345)
